@@ -4,11 +4,12 @@
             <th> # </th>
             <th> Bandera </th>
             <th> Nombre </th>
+            <th> Capital </th>
             <th> Población </th>
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="animate__animated animate__fadeIn">
         <tr *ngFor="let pais of paises; let i = index">
             <td>{{i + 1}}</td>
             <td>
@@ -18,7 +19,8 @@
                     [alt]="pais.name.common"
                 >
             </td>
-            <td>{{pais.name.common}}</td>
+            <td>{{pais.name.common | titlecase}}</td>
+            <td>{{ pais.capital[0] | titlecase }}</td>
             <td>{{pais.population | number}}</td>
             <td>
                 <a 
